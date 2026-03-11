@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>亲密关系深度共建研习会 | 从认知到实践的幸福蓝图</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #9d4edd;
+            --secondary-color: #c77dff;
+            --accent-color: #ff758f;
+            --warm-gradient: linear-gradient(135deg, #9d4edd 0%, #c77dff 50%, #ff758f 100%);
+            --text-dark: #2d3142;
+            --text-light: #4f5d75;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --shadow-sm: 0 2px 15px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 15px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 导航栏 */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--warm-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            background: var(--warm-gradient);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(157, 78, 221, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(157, 78, 221, 0.4);
+        }
+
+        /* 英雄区 */
+        .hero {
+            padding: 150px 0 100px;
+            background: linear-gradient(135deg, rgba(157, 78, 221, 0.05) 0%, rgba(255, 117, 143, 0.05) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(199, 125, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 25px;
+            background: var(--warm-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 35px;
+            font-weight: 300;
+        }
+
+        .core-concept {
+            background: white;
+            padding: 20px;
+            border-radius: 16px;
+            border-left: 4px solid var(--accent-color);
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .core-concept p {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-dark);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            background: var(--warm-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .hero-image {
+            background: var(--warm-gradient);
+            border-radius: 24px;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 8rem;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%); }
+            100% { transform: translateX(100%) translateY(100%); }
+        }
+
+        /* 通用区块 */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        /* 核心理念 */
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .concept-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .concept-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .concept-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .concept-card h3 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .concept-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* 课程模块 */
+        .modules {
+            background: white;
+        }
+
+        .module-timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .module-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .module-item {
+            display: grid;
+            grid-template-columns: 1fr 40px 1fr;
+            gap: 30px;
+            margin-bottom: 60px;
+            align-items: start;
+            position: relative;
+        }
+
+        .module-item:nth-child(even) .module-content {
+            order: 3;
+            text-align: left;
+        }
+
+        .module-item:nth-child(even) .module-time {
+            order: 1;
+            text-align: right;
+        }
+
+        .module-dot {
+            width: 40px;
+            height: 40px;
+            background: var(--warm-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            box-shadow: 0 0 0 8px rgba(157, 78, 221, 0.1);
+            z-index: 10;
+        }
+
+        .module-time {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            padding-top: 8px;
+        }
+
+        .module-content h3 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .module-content p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .module-content ul {
+            list-style: none;
+        }
+
+        .module-content li {
+            color: var(--text-light);
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+
+        .module-content li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* 适合人群 */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .audience-card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .audience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .audience-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .audience-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .audience-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* 课程信息 */
+        .info-section {
+            background: linear-gradient(135deg, rgba(157, 78, 221, 0.05) 0%, rgba(255, 117, 143, 0.05) 100%);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .info-card h3 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .info-value {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .price-card {
+            border: 2px solid var(--primary-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-card::before {
+            content: '早鸟优惠';
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: var(--accent-color);
+            color: white;
+            padding: 5px 35px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--warm-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 20px 0;
+        }
+
+        .price-desc {
+            color: var(--text-light);
+            margin-bottom: 25px;
+        }
+
+        .price-note {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-top: 15px;
+        }
+
+        /* 配套服务 */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--warm-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            margin: 0 auto 20px;
+        }
+
+        .benefit-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .benefit-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* 价值承诺 */
+        .promise-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .promise-section .section-title,
+        .promise-section .section-subtitle {
+            color: white;
+        }
+
+        .promise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .promise-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .promise-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .promise-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .promise-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .promise-item p {
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        /* 报名区 */
+        .cta-section {
+            background: white;
+            text-align: center;
+            padding: 120px 0;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            background: var(--warm-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .big-cta {
+            display: inline-block;
+            background: var(--warm-gradient);
+            color: white;
+            padding: 20px 60px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 60px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(157, 78, 221, 0.4);
+        }
+
+        .big-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(157, 78, 221, 0.5);
+        }
+
+        /* 页脚 */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-text {
+            opacity: 0.7;
+            margin-bottom: 30px;
+        }
+
+        .copyright {
+            opacity: 0.5;
+            font-size: 0.9rem;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-image {
+                height: 300px;
+                order: -1;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .module-timeline::before {
+                left: 20px;
+            }
+
+            .module-item {
+                grid-template-columns: 40px 1fr;
+            }
+
+            .module-item:nth-child(even) .module-content,
+            .module-item:nth-child(even) .module-time {
+                order: initial;
+                text-align: left;
+            }
+
+            .module-time {
+                display: none;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+
+            .big-cta {
+                padding: 18px 40px;
+                font-size: 1.1rem;
+            }
+        }
+
+        /* 平滑滚动 */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container nav-content">
+            <div class="logo">幸福研习社</div>
+            <ul class="nav-links">
+                <li><a href="#overview">课程概览</a></li>
+                <li><a href="#modules">课程大纲</a></li>
+                <li><a href="#audience">适合人群</a></li>
+                <li><a href="#info">课程信息</a></li>
+                <li><a href="#benefits">配套服务</a></li>
+            </ul>
+            <a href="#signup" class="cta-button">立即报名</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>亲密关系深度共建研习会</h1>
+                <p class="hero-subtitle">从认知到实践的幸福蓝图</p>
+                <div class="core-concept">
+                    <p>💡 <strong>核心理念：</strong>亲密关系不是静态的“找到对的人”，而是动态的“与眼前人共创对的相处模式”。</p>
+                </div>
+                <p>本课程基于进化心理学、成人依恋理论、沟通心理学等多学科前沿成果，不仅提供诊断关系的“地图”，更授予改善关系的“导航仪”与“工具箱”。</p>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">7h</div>
+                        <div class="stat-label">全天深度沉浸</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">4大</div>
+                        <div class="stat-label">核心模块</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">12+</div>
+                        <div class="stat-label">实用工具</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                💞
+            </div>
+        </div>
+    </section>
+
+    <section id="overview" class="section">
+        <div class="container">
+            <h2 class="section-title">课程核心理念</h2>
+            <p class="section-subtitle">融合多学科前沿成果，构建完整的关系认知体系</p>
+            <div class="concept-grid">
+                <div class="concept-card">
+                    <div class="concept-icon">🧠</div>
+                    <h3>依恋理论基石</h3>
+                    <p>系统解析安全型、焦虑型、回避型三种依恋风格的表现、需求与冲突根源，理解行为背后的情感逻辑，而非简单归咎于“性格不合”。</p>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-icon">💬</div>
+                    <h3>正向沟通催眠术</h3>
+                    <p>萃取“调协”、“同步化”、“印象框架”等精华，转化为促进深度理解与共鸣的沟通技术，建立安全的情感连接通道。</p>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-icon">❤️</div>
+                    <h3>情绪与吸引力机制</h3>
+                    <p>深入剖析情绪在关系中的核心作用，学习识别、接纳、引导情绪，将理性沟通升级为情感共鸣，持续维护长期吸引力。</p>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-icon">🛠️</div>
+                    <h3>关系经营智慧</h3>
+                    <p>聚焦长期关系中的实际问题，提供PU与MV平衡、冲突艺术化处理、期望管理、共同目标设定等高度实操性策略。</p>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-icon">🌟</div>
+                    <h3>自我成长与框架</h3>
+                    <p>强调健康关系的起点是稳固的自我，引导建立“以自我成长为中心”的恋爱观，培养独立自信的人格魅力。</p>
+                </div>
+                <div class="concept-card">
+                    <div class="concept-icon">🤝</div>
+                    <h3>共同进化理念</h3>
+                    <p>关系如同生命体，经历蜜月期、权力斗争期、稳定期、共同创造期，不是线性发展，而是螺旋上升或下降，停滞即退化。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="modules" class="section modules">
+        <div class="container">
+            <h2 class="section-title">详细课程大纲</h2>
+            <p class="section-subtitle">四大模块循序渐进，从认知到实践，系统性提升关系经营能力</p>
+            <div class="module-timeline">
+                <div class="module-item">
+                    <div class="module-time">上午 9:00-10:30</div>
+                    <div class="module-dot">1</div>
+                    <div class="module-content">
+                        <h3>关系地图测绘——诊断现状，明晰目标</h3>
+                        <p>跳出日常纷争，以“俯瞰视角”科学评估当前关系所处的阶段、健康度及核心动力，共同设定清晰的改善目标。</p>
+                        <ul>
+                            <li>关系生命周期与动态律动理论</li>
+                            <li>RISE关系健康度四维诊断模型</li>
+                            <li>识别“自动驾驶”的负向互动模式</li>
+                            <li>“三年后的我们”愿景共创工作坊</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-time">上午 10:45-12:30</div>
+                    <div class="module-dot">2</div>
+                    <div class="module-content">
+                        <h3>沟通解码与重塑——从对抗到对话</h3>
+                        <p>解构无效沟通，学习建立安全、高效的对话模式，将冲突转化为增进理解的机会。</p>
+                        <ul>
+                            <li>良好沟通的神经心理学基础</li>
+                            <li>超越语言：倾听的深层艺术</li>
+                            <li>非暴力沟通与需要理论实践</li>
+                            <li>破解僵局：冲突解决的双赢协议术</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-time">下午 13:30-15:15</div>
+                    <div class="module-dot">3</div>
+                    <div class="module-content">
+                        <h3>理解差异与滋养爱情——两性的星球对话</h3>
+                        <p>深入探讨两性在思维、情感表达、需求上的系统性差异，学习用对方能接收的“爱的频率”表达爱意。</p>
+                        <ul>
+                            <li>当火星遇见金星：进化塑造的差异</li>
+                            <li>爱的五种语言：找到专属密码</li>
+                            <li>激情与亲密：长期关系中的性爱沟通</li>
+                            <li>培育感恩与欣赏：关系的日常营养剂</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-item">
+                    <div class="module-time">下午 15:30-17:00</div>
+                    <div class="module-dot">4</div>
+                    <div class="module-content">
+                        <h3>共同成长与未来构建——让爱进化</h3>
+                        <p>将关系视角从“解决问题”提升到“共同创造”，学习如何设定共同目标、应对变化，让关系成为个人成长的催化剂。</p>
+                        <ul>
+                            <li>独立与依赖的健康平衡：依赖悖论</li>
+                            <li>共同目标设定：打造“我们”的故事</li>
+                            <li>应对关系变化与危机：弹性与修复</li>
+                            <li>制定《90天关系蜕变行动计划》</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="audience" class="section">
+        <div class="container">
+            <h2 class="section-title">适合人群</h2>
+            <p class="section-subtitle">无论你处于关系的哪个阶段，都能在这里找到突破的方向</p>
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <div class="audience-icon">💑</div>
+                    <h4>恋爱伴侣</h4>
+                    <p>处于恋爱中，希望让关系更甜蜜、更深入，为未来婚姻奠定坚实基础的伴侣。</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">👫</div>
+                    <h4>已婚夫妇</h4>
+                    <p>渴望突破平淡期、化解固有矛盾、重燃亲密感，让婚姻更幸福的夫妻。</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">💔</div>
+                    <h4>关系瓶颈期</h4>
+                    <p>正处于关系瓶颈或频繁冲突，寻求实质性改善方法的个体或伴侣。</p>
+                </div>
+                <div class="audience-card">
+                    <div class="audience-icon">🌟</div>
+                    <h4>自我成长者</h4>
+                    <p>对自我认知和人际关系提升有强烈兴趣，希望为未来幸福关系奠定基础的个人。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="info" class="section info-section">
+        <div class="container">
+            <h2 class="section-title">课程基本信息</h2>
+            <p class="section-subtitle">一天深度沉浸，获取终身受用的关系经营智慧</p>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>课程详情</h3>
+                    <div class="info-item">
+                        <span class="info-label">主讲人</span>
+                        <span class="info-value">资深关系教练</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">课程日期</span>
+                        <span class="info-value">2026年X月X日</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">课程时间</span>
+                        <span class="info-value">9:00-17:00</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">课程时长</span>
+                        <span class="info-value">7小时（含午餐）</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">授课地点</span>
+                        <span class="info-value">一线城市中心商务区</span>
+                    </div>
+                </div>
+
+                <div class="info-card price-card">
+                    <h3>课程费用</h3>
+                    <div class="price">¥3800</div>
+                    <p class="price-desc">单人早鸟价</p>
+                    <div class="info-item">
+                        <span class="info-label">伴侣同行</span>
+                        <span class="info-value">¥6800/对</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">三人团报</span>
+                        <span class="info-value">享85折优惠</span>
+                    </div>
+                    <p class="price-note">* 费用包含课程资料、午餐、茶歇、后续3个月社群服务</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>课程特色</h3>
+                    <div class="info-item">
+                        <span class="info-label">📚 系统科学</span>
+                        <span class="info-value">多维度知识体系</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">🎭 深度体验</span>
+                        <span class="info-value">工作坊互动形式</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">⚖️ 双轨并进</span>
+                        <span class="info-value">个体+关系双提升</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">🛠️ 工具化导向</span>
+                        <span class="info-value">即学即用方法论</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">🤍 安全场域</span>
+                        <span class="info-value">尊重保密非评判</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="section">
+        <div class="container">
+            <h2 class="section-title">配套材料与后续服务</h2>
+            <p class="section-subtitle">不仅是一天的课程，更是长期关系成长的支持系统</p>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📖</div>
+                    <h4>学员手册</h4>
+                    <p>包含课程精华讲义、所有测评量表、练习工作表、沟通话术清单、推荐阅读书单。</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🃏</div>
+                    <h4>工具卡包</h4>
+                    <p>实体卡片套装，包含情绪词汇卡、非暴力沟通句式卡、爱的语言行动建议卡、冲突解决步骤卡。</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎧</div>
+                    <h4>音频导引</h4>
+                    <p>提供正念呼吸平静练习、关系愿景冥想、深度倾听练习等引导音频，供课后复习使用。</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📅</div>
+                    <h4>90天蜕变任务卡</h4>
+                    <p>电子版每周推送小任务，将课程内容分解为可持续的微习惯，循序渐进改变。</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">👥</div>
+                    <h4>专属社群</h4>
+                    <p>加入课程专属微信群，用于后续打卡、分享进展、提问，导师团队定期答疑。</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎙️</div>
+                    <h4>月度微课</h4>
+                    <p>享受为期三个月的月度主题微课和定期答疑，持续学习深化课程内容。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section promise-section">
+        <div class="container">
+            <h2 class="section-title">课程价值与承诺</h2>
+            <p class="section-subtitle">授予你一套可终身受用的关系操作系统，投资于一生最重要的幸福工程</p>
+            <div class="promise-grid">
+                <div class="promise-item">
+                    <div class="promise-icon">🔍</div>
+                    <h4>看清</h4>
+                    <p>像医生看X光片一样，看清你们关系的真实结构与健康度，找到问题的核心根源。</p>
+                </div>
+                <div class="promise-item">
+                    <div class="promise-icon">👂</div>
+                    <h4>听懂</h4>
+                    <p>突破表面争吵，听懂伴侣情绪背后的核心渴望与恐惧，减少80%的无效沟通。</p>
+                </div>
+                <div class="promise-item">
+                    <div class="promise-icon">🗣️</div>
+                    <h4>说对</h4>
+                    <p>用能让对方打开心扉、而非激起防御的方式，表达你的爱与需求，让爱的流动更顺畅。</p>
+                </div>
+                <div class="promise-item">
+                    <div class="promise-icon">🎯</div>
+                    <h4>做准</h4>
+                    <p>采取那些真正能滋养关系、而非自我感动的行动，用对方法，让关系快速升温。</p>
+                </div>
+                <div class="promise-item">
+                    <div class="promise-icon">🤝</div>
+                    <h4>共创</h4>
+                    <p>与伴侣从生活的“室友”或“战友”，升级为人生旅程的“创意合伙人”，共同创造理想生活。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="signup" class="cta-section">
+        <div class="container cta-content">
+            <h2>开启你的亲密关系蜕变之旅</h2>
+            <p>改变从认知开始，幸福从行动而来。<br>投资于此课程，即是投资于你一生最重要的幸福工程。</p>
+            <a href="#" class="big-cta">立即报名 →</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">幸福研习社</div>
+            <p class="footer-text">亲密关系不是静态的“找到对的人”，而是动态的“与眼前人共创对的相处模式”。</p>
+            <p class="copyright">© 2026 亲密关系深度共建研习会. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
